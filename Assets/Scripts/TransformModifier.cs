@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class TransformModifier : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
+	void Start()
+	{
+		
+	}
 
-    void Update()
-    {
-        transform.Rotate(new Vector3(30f, 15f, 10f) * Time.deltaTime);
-    }
+	void Update()
+	{
+		transform.Rotate(new Vector3(30f, 15f, 10f) * Time.deltaTime);
+	}
 }
