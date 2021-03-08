@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float Speed = 3.0f;
+    public float Speed = 2.0f;
+    public float MouseSensitivity = 2.0f;
+
+    public Camera Camera;
 
     void Start()
     {
@@ -13,9 +16,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        var controller = GetComponent<CharacterController>();
+        transform.Rotate(0f, Input.GetAxis("Mouse X") * MouseSensitivity, 0f);
 
-        controller.Move(moveVector * Time.deltaTime);
+        transform.Translate(transform.forward * Input.GetAxis("Vertical") * Speed * Time.deltaTime);
+        transform.Translate(transform.right * Input.GetAxis("Horizontal") * Speed * Time.deltaTime);
     }
 }
