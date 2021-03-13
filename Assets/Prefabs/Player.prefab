@@ -112,3 +112,4 @@ MonoBehaviour:
   Speed: 15
   MouseSensitivity: 2
   Camera: {fileID: 0}
+  Nose: {fileID: 0}

@@ -16,10 +16,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(0f, Input.GetAxis("Mouse X") * MouseSensitivity, 0f);
-
         transform.Translate(transform.forward * Input.GetAxis("Vertical") * Speed * Time.deltaTime);
-        transform.Translate(transform.right * Input.GetAxis("Horizontal") * Speed * Time.deltaTime);
+        transform.Rotate(new Vector3(0f, Input.GetAxis("Horizontal") * 15f * Time.deltaTime, 0f));
 
         var cameraPosition = transform.position - transform.forward * 2 + new Vector3(0f, 2f, 0f);
         Camera.transform.position = cameraPosition;
