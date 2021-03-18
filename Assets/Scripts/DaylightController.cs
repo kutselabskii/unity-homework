@@ -11,6 +11,11 @@ public class DaylightController : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(new Vector3(0f, 10f * Time.deltaTime));
+        transform.Rotate(new Vector3(0f, 10f * Time.deltaTime, 0f));
+    }
+
+    public bool IsNight()
+    {
+        return transform.eulerAngles.y > 75 && transform.eulerAngles.y < 240;
     }
 }
