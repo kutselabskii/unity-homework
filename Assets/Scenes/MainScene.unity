@@ -776,6 +776,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7376420769488361006, guid: 31e37afbf3ec3da43b4a5e890dd88ceb, type: 3}
+      propertyPath: m_Cookie
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376420769488361006, guid: 31e37afbf3ec3da43b4a5e890dd88ceb, type: 3}
+      propertyPath: m_CookieSize
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376420769488361007, guid: 31e37afbf3ec3da43b4a5e890dd88ceb, type: 3}
       propertyPath: m_Name
       value: Daylight
