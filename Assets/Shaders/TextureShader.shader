@@ -1,20 +1,29 @@
 Shader "Custom/TextureShader"
 {
     Properties {
+        _Color("Color", Color) = (1,1,1,1)
         _MainTex("Texture", 2D) = "white" {}
     }
     SubShader {
         Tags { "RenderType" = "Opaque" }
         CGPROGRAM
-        #pragma surface surf Lambert
+        #pragma surface surf Standard fullforwardshadows
 
-        struct Input {
-            float2 uv_mainTex;
-        };
+        #pragma target 3.0
+
         sampler2D _MainTex;
 
-        void surf(Input IN, inout SurfaceOutput o) {
-            o.Albedo = tex2D(_MainTex, IN.uv_mainTex).rgb;
+        struct Input {
+            float2 uv_MainTex;
+        };
+
+        fixed4 _Color;
+
+        UNITY_INSTANCING_BUFFER_START(Props)
+        UNITY_INSTANCING_BUFFER_END(Props)
+
+        void surf(Input IN, inout SurfaceOutputStandard o) {
+            o.Albedo = (tex2D(_MainTex, IN.uv_MainTex) * _Color).rgb;
         }
         ENDCG
     }
